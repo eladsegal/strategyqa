@@ -1,0 +1,3 @@
+pip install elasticsearch
+pip install requests_aws4auth
+pip install smart_open

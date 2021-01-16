@@ -1,0 +1,4 @@
+allennlp==1.2.1
+allennlp-models==1.2.1
+git+git://github.com/eladsegal/transformers@self-v3.1.0#egg=transformers
+wget==3.2

@@ -1,0 +1,34 @@
+import argparse
+import os
+
+from tempfile import TemporaryDirectory
+import tarfile
+
+from allennlp.common.params import Params
+
+
+def main(args):
+    with TemporaryDirectory() as tmpdirname:
+        with tarfile.open(args.src_model, mode="r:gz") as input_tar:
+            print("Extracting model...")
+            input_tar.extractall(tmpdirname)
+
+        Params.from_file(args.config).to_file(os.path.join(tmpdirname, "config.json"))
+
+        os.makedirs(
+            os.path.dirname(args.dest_model) if os.path.dirname(args.dest_model) != "" else ".",
+            exist_ok=True,
+        )
+        with tarfile.open(args.dest_model, "w:gz") as output_tar:
+            print("Archiving model...")
+            output_tar.add(tmpdirname, arcname="")
+
+
+if __name__ == "__main__":
+    parse = argparse.ArgumentParser()
+    parse.add_argument("src_model", type=str, help="Source model.tar.gz to modify")
+    parse.add_argument("config", type=str, help="Configuration file to use")
+    parse.add_argument("dest_model", type=str, help="Output path")
+    args = parse.parse_args()
+
+    main(args)
