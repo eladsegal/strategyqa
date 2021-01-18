@@ -113,7 +113,7 @@ To create an AllenNLP model archive for it, run the following:
 ### Iterative Answering of Decompositions
 1. Download [BoolQ dataset](https://github.com/google-research-datasets/boolean-questions) and extract it to `data/`, so you have `data/boolq/[train/dev].jsonl`.
 
-2. Download [SQuAD 2.0 dataset](https://github.com/google-research-datasets/boolean-questions) and extract it to `data/`, so you have `data/squad_v2/[train/dev]-v2.0.json`.
+2. Download [SQuAD 2.0 dataset](https://rajpurkar.github.io/SQuAD-explorer/) and extract it to `data/`, so you have `data/squad_v2/[train/dev]-v2.0.json`.
 
 3. Append BoolQ to SQuAD:
     ```
