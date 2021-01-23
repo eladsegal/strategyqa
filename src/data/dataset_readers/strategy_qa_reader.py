@@ -116,39 +116,42 @@ class StrategyQAReader(BaseDatasetReader):
         answer: Optional[bool] = json_obj["answer"] if "answer" in json_obj else None
         facts: Optional[List[str]] = json_obj["facts"] if "facts" in json_obj else None
 
-        decomposition_full = [
-            {
-                "question": sub_question,
-                "evidence_per_annotator": [
-                    list(
-                        dict.fromkeys(
-                            [
-                                evidence_id
-                                for evidence_ids in annotator[i]
-                                if isinstance(evidence_ids, list)
-                                for evidence_id in evidence_ids
-                            ]
+        if "decomposition" in json_obj:
+            decomposition_full = [
+                {
+                    "question": sub_question,
+                    "evidence_per_annotator": [
+                        list(
+                            dict.fromkeys(
+                                [
+                                    evidence_id
+                                    for evidence_ids in annotator[i]
+                                    if isinstance(evidence_ids, list)
+                                    for evidence_id in evidence_ids
+                                ]
+                            )
                         )
-                    )
-                    for annotator in json_obj["evidence"]
-                ],
-                "is_operation_per_annotator": [
-                    any(
-                        evidence_ids for evidence_ids in annotator[i] if evidence_ids == "operation"
-                    )
-                    for annotator in json_obj["evidence"]
-                ],
-                "no_evidence_per_annotator": [
-                    any(
-                        evidence_ids
-                        for evidence_ids in annotator[i]
-                        if evidence_ids == "no_evidence"
-                    )
-                    for annotator in json_obj["evidence"]
-                ],
-            }
-            for i, sub_question in enumerate(json_obj["decomposition"])
-        ]
+                        for annotator in json_obj["evidence"]
+                    ],
+                    "is_operation_per_annotator": [
+                        any(
+                            evidence_ids for evidence_ids in annotator[i] if evidence_ids == "operation"
+                        )
+                        for annotator in json_obj["evidence"]
+                    ],
+                    "no_evidence_per_annotator": [
+                        any(
+                            evidence_ids
+                            for evidence_ids in annotator[i]
+                            if evidence_ids == "no_evidence"
+                        )
+                        for annotator in json_obj["evidence"]
+                    ],
+                }
+                for i, sub_question in enumerate(json_obj["decomposition"])
+            ]
+        else:
+            decomposition_full = None
 
         generated_decomposition = None
         if self._generated_decompositions is not None:

@@ -37,7 +37,7 @@ class StrategyQADecompositionReader(BaseDatasetReader):
 
     def _item_to_instance(self, item):
         question: str = item["question"]
-        decomposition: Optional[List[str]] = item["decomposition"]
+        decomposition: Optional[List[str]] = item["decomposition"] if "decomposition" in item else None
 
         if not self._is_training or decomposition is not None:
             instance = self.text_to_instance(question, decomposition)
@@ -85,8 +85,11 @@ class StrategyQADecompositionReader(BaseDatasetReader):
         # make the metadata
         metadata = {
             "question": question,
-            "gold_decomposition": decomposition,
         }
+        if decomposition is not None:
+            metadata.update({
+                "gold_decomposition": decomposition
+            })
         fields["metadata"] = MetadataField(metadata)
 
         return Instance(fields)

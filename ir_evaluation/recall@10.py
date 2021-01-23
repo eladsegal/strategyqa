@@ -30,9 +30,6 @@ def calculate_score(args):
             )
         retrieved_paragraphs = all_retrieved_paragraphs[json_obj["qid"]][: args.retrieval_limit]
 
-        if len(retrieved_paragraphs) == 0:
-            continue
-
         score_per_annotator = []
         for evidence in evidence_per_annotator:
             score = recall(evidence, retrieved_paragraphs) if len(evidence) > 0 else 0

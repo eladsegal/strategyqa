@@ -31,7 +31,7 @@
             "type": "bleu",
         },
         "rouge": {
-            "type": "rogue",
+            "type": "rouge",
         },
         "sari": {
             "type": "sari",
