@@ -205,9 +205,9 @@ class GenModel(Model):
             for metric_key, metric in self._metrics.items():
                 if metric.__class__.__name__ == "SARI":
                     # Specific to BART and the way the StrategyQA readers work
-                    sources = [q.split(" ") for q in output_dict["question"]]
-                    predictions = [" ".join(d).split(" ") for d in output_dict["decomposition"]]
-                    targets = [[" ".join(g).split(" ")] for g in output_dict["gold_decomposition"]]
+                    sources = [q.replace("?", " ?").split() for q in output_dict["question"]]
+                    predictions = [" ".join(d).replace("?", " ?").split() for d in output_dict["decomposition"]]
+                    targets = [[" ".join(g).replace("?", " ?").split()] for g in output_dict["gold_decomposition"]]
                     metric(sources, predictions, targets)
                 else:
                     metric(generated_ids, target_ids)

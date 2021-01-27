@@ -152,7 +152,7 @@ To create an AllenNLP model archive for it, run the following:
     ```
 - Output predictions:  
     ```
-    python run_scripts/predict.py --model [path to a QA model (.tar.gz file)] --data data/strategyqa/dev.json -g "GPU" --output-file OUTPUT_PATH.jsonl
+    python run_scripts/predict.py --model [path to a QA model (.tar.gz file)] --data DATA_PATH -g "GPU" --output-file OUTPUT_PATH.jsonl
     ```
 
 ### Recall@10
