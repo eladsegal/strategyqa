@@ -241,6 +241,7 @@ class StrategyQAReader(BaseDatasetReader):
             "question": question,
             "answer": answer,
             "decomposition": decomposition,
+            "generated_decomposition": generated_decomposition,
             "paragraphs": paragraphs["unified"],
             "queries": paragraphs["queries"] if "queries" in paragraphs else [],
         }
@@ -296,7 +297,7 @@ class StrategyQAReader(BaseDatasetReader):
         return {"unified": results, "queries": [query]}
 
     def _ora_p(self, decomposition, **kwargs):
-        if len(decomposition) == 0:
+        if decomposition is None or len(decomposition) == 0:
             return None
 
         num_of_matchings = len(decomposition[0]["evidence_per_annotator"])
@@ -345,7 +346,7 @@ class StrategyQAReader(BaseDatasetReader):
         return {"unified": results, "per_step": results_per_step}
 
     def _ir_ora_d(self, decomposition, **kwargs):
-        if len(decomposition) == 0:
+        if decomposition is None or len(decomposition) == 0:
             return None
 
         all_questions = [step["question"] for i, step in enumerate(decomposition)]

@@ -195,9 +195,10 @@ class GenModel(Model):
         output_dict["decomposition"] = decomposition
         output_dict["qid"] = [metadata_entry["qid"] for metadata_entry in metadata]
         output_dict["question"] = [metadata_entry["question"] for metadata_entry in metadata]
-        output_dict["gold_decomposition"] = [
-            metadata_entry["gold_decomposition"] for metadata_entry in metadata
-        ]
+        if "gold_decomposition" in next(iter(metadata), {}):
+            output_dict["gold_decomposition"] = [
+                metadata_entry["gold_decomposition"] for metadata_entry in metadata
+            ]
 
         has_target = target_ids is not None and target_ids.shape[-1] > 0
         if has_target:

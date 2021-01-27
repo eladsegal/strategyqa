@@ -93,7 +93,7 @@ class HFClassifier(Model):
             self._accuracy(output_dict["logits"], label)
 
         output_dict["probs"] = torch.nn.functional.softmax(output_dict["logits"], dim=-1)
-        if "qid" in kwargs["metadata"][0]:
+        if "qid" in next(iter(kwargs["metadata"]), {}):
             output_dict["qid"] = [metadata_entry["qid"] for metadata_entry in kwargs["metadata"]]
 
         return output_dict

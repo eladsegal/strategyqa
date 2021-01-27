@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 
 from allennlp.common.params import Params
 from allennlp.data import DatasetReader
@@ -8,6 +9,7 @@ from allennlp.common.util import import_module_and_submodules
 
 def get_paragraphs(args):
     import_module_and_submodules("src")
+    os.environ["weights"] = ""
 
     overrides_dict = {}
     ext_vars = {}
