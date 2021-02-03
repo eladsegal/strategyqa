@@ -143,7 +143,9 @@ To create an AllenNLP model archive for it, run the following:
 
 ## Prediction and Evaluation
 
-***Leaderboard and official evaluation script are coming soon.***
+The **StrategyQA leaderboard** is available [here](https://leaderboard.allenai.org/strategyqa/).
+
+The official evaluation script can be found [here](https://github.com/allenai/strategyqa-evaluator).
 
 ### Question Answering
 - Evaluate accuracy:
