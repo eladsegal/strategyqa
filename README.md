@@ -172,7 +172,7 @@ The official evaluation script can be found [here](https://github.com/allenai/st
 
 ## Download Links to Our Trained Models
 
-* **RoBERTa\***: [link](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.tar.gz)
+* **RoBERTa\*** (not trained on StrategyQA): [link](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.tar.gz)
 * **RoBERTa\*-no_context**: [link](https://storage.googleapis.com/ai2i/strategyqa/models/1_STAR_no_context.tar.gz)
 * **RoBERTa-IR-Q**: [link](https://storage.googleapis.com/ai2i/strategyqa/models/2_IR-Q.tar.gz)
 * **RoBERTa\*-IR-Q**: [link](https://storage.googleapis.com/ai2i/strategyqa/models/3_STAR_IR-Q.tar.gz)
