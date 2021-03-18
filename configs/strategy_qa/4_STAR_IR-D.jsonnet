@@ -9,6 +9,6 @@ config {
       },
       "model"+: {
           "initializer": {}
-      }
+      },
       "train_data_path": null,
 }
