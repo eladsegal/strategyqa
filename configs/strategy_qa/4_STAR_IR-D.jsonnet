@@ -7,5 +7,8 @@ config {
                   "data/strategyqa/generated/bart_decomp_dev_predictions.jsonl",
             ]
       },
+      "model"+: {
+          "initializer": {}
+      }
       "train_data_path": null,
 }
