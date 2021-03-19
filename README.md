@@ -156,6 +156,8 @@ The official evaluation script can be found [here](https://github.com/allenai/st
     ```
     python run_scripts/predict.py --model [path to a QA model (.tar.gz file)] --data DATA_PATH -g "GPU" --output-file OUTPUT_PATH.jsonl
     ```
+Notes:
+* The model created with the config `8_STAR_ORA-P-D-last-step.jsonnet` should be be run with `data/strategy_qa/transformer_qa_ORA-P_dev_no_placeholders.json`, and not with `data/strategy_qa/dev.json` like the other models .
 
 ### Recall@10
 1. Outputs the retrieved paragraphs for the configuration.  
