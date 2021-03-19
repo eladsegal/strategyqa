@@ -333,7 +333,13 @@ class StrategyQAReader(BaseDatasetReader):
                 return None
             results.append(es_results)
         if len(results) == 0:
-            return None
+            if self._answer_last_decomposition_step:
+                results = [{"content": " "}]
+                results_per_step = [[] for i in range(len(decomposition))]
+                results_per_step[-1].extend(results)
+                return {"unified": results, "per_step": results_per_step}
+            else:
+                return None
 
         results_per_step = [[] for i in range(len(decomposition))]
         for i, step_evidence_ids in enumerate(evidence_ids_per_step):
