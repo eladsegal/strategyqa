@@ -174,16 +174,13 @@ Notes:
 
 ## Download Links to Our Trained Models
 
-* **RoBERTa\*** (not trained on StrategyQA): [model](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.json)
-* **RoBERTa\*-no_context**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/1_STAR_no_context.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/1_STAR_no_context.json)
-* **RoBERTa-IR-Q**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/2_IR-Q.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/2_IR-Q.json)
-* **RoBERTa\*-IR-Q**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/3_STAR_IR-Q.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/3_STAR_IR-Q.json)
-* **RoBERTa\*-IR-D**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/4_STAR_IR-D.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/4_STAR_IR-D.json)
-* **RoBERTa\*-IR-ORA-D**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/5_STAR_IR-ORA-D.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/5_STAR_IR-ORA-D.json)
-* **RoBERTa\*-ORA-P**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/6_STAR_ORA-P.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/6_STAR_ORA-P.json)
-* **RoBERTa\*-ORA-P-D-last-step-raw**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/7_STAR_ORA-P-D-last-step-raw.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/7_STAR_ORA-P-D-last-step-raw.json)
-* **RoBERTa\*-ORA-P-D-last-step**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/8_STAR_ORA-P-D-last-step.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/8_STAR_ORA-P-D-last-step.json)
-* **BART-Decomp**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/bart_decomp_strategy_qa.tar.gz), [metrics](https://storage.googleapis.com/ai2i/strategyqa/models/bart_decomp_strategy_qa.json)
-
-Notes:
-* All the metrics are on `data/strategyqa/dev.json`, except **RoBERTa\*** for which the metrics are on BoolQ and **RoBERTa\*-ORA-P-D-last-step** for which the metrics are on `data/strategyqa/transformer_qa_ORA-P_dev_no_placeholders.json`.
+* **RoBERTa\*** (not trained on StrategyQA): [model](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.tar.gz), [metrics (`BoolQ`)](https://storage.googleapis.com/ai2i/strategyqa/models/2_boolq.json)
+* **RoBERTa\*-no_context**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/1_STAR_no_context.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/1_STAR_no_context.json)
+* **RoBERTa-IR-Q**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/2_IR-Q.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/2_IR-Q.json)
+* **RoBERTa\*-IR-Q**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/3_STAR_IR-Q.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/3_STAR_IR-Q.json)
+* **RoBERTa\*-IR-D**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/4_STAR_IR-D.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/4_STAR_IR-D.json)
+* **RoBERTa\*-IR-ORA-D**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/5_STAR_IR-ORA-D.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/5_STAR_IR-ORA-D.json)
+* **RoBERTa\*-ORA-P**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/6_STAR_ORA-P.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/6_STAR_ORA-P.json)
+* **RoBERTa\*-ORA-P-D-last-step-raw**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/7_STAR_ORA-P-D-last-step-raw.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/7_STAR_ORA-P-D-last-step-raw.json)
+* **RoBERTa\*-ORA-P-D-last-step**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/8_STAR_ORA-P-D-last-step.tar.gz), [metrics (`data/strategyqa/transformer_qa_ORA-P_dev_no_placeholders.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/8_STAR_ORA-P-D-last-step.json)
+* **BART-Decomp**: [model](https://storage.googleapis.com/ai2i/strategyqa/models/bart_decomp_strategy_qa.tar.gz), [metrics (`data/strategyqa/dev.json`)](https://storage.googleapis.com/ai2i/strategyqa/models/bart_decomp_strategy_qa.json)
