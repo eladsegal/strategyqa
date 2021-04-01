@@ -346,7 +346,7 @@ class StrategyQAReader(BaseDatasetReader):
             for evidence_id in step_evidence_ids:
                 es_results = get_elasticsearch_paragraph(self._paragraphs_cache, evidence_id)
                 if es_results is None:
-                    return None
+                    return {}
                 results_per_step[i].append(es_results)
 
         return {"unified": results, "per_step": results_per_step}
