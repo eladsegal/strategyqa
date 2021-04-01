@@ -298,11 +298,11 @@ class StrategyQAReader(BaseDatasetReader):
 
     def _ora_p(self, decomposition, **kwargs):
         if decomposition is None or len(decomposition) == 0:
-            return None
+            return {}
 
         num_of_matchings = len(decomposition[0]["evidence_per_annotator"])
         if num_of_matchings == 0:
-            return None
+            return {}
 
         all_evidence_ids = [
             [step["evidence_per_annotator"][i] for step in decomposition]
@@ -330,7 +330,7 @@ class StrategyQAReader(BaseDatasetReader):
         for evidence_id in evidence_ids:
             es_results = get_elasticsearch_paragraph(self._paragraphs_cache, evidence_id)
             if es_results is None:
-                return None
+                return {}
             results.append(es_results)
         if len(results) == 0:
             if self._answer_last_decomposition_step:
@@ -339,7 +339,7 @@ class StrategyQAReader(BaseDatasetReader):
                 results_per_step[-1].extend(results)
                 return {"unified": results, "per_step": results_per_step}
             else:
-                return None
+                return {}
 
         results_per_step = [[] for i in range(len(decomposition))]
         for i, step_evidence_ids in enumerate(evidence_ids_per_step):
@@ -353,7 +353,7 @@ class StrategyQAReader(BaseDatasetReader):
 
     def _ir_ora_d(self, decomposition, **kwargs):
         if decomposition is None or len(decomposition) == 0:
-            return None
+            return {}
 
         all_questions = [step["question"] for i, step in enumerate(decomposition)]
 
